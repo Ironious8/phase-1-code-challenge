@@ -1,24 +1,30 @@
 const calculateNetSalary=function(basicSalary, benefits) {
 
-//Gross salary calculation
+    const prompt=require("prompt-sync") ({sigint: true});
+    let taxableIncome= prompt("Enter salary");
+   
+
+
+
+    //Gross salary calculation 
 let grossPay=basicSalary+benefits;
    
 // PAYE calculation
-let taxableIncome=10000;
+let paye=10000;
 if (taxableIncome<=24000) {
-    return 'taxableIncome*0.1';
+    return 'paye=taxableIncome*0.1';
 }
 else if (taxableIncome<=32333) {
-    return '(taxableIncome-24000)*0.25';
+    return 'paye=24000*0.1+(taxableIncome-24000)*0.25';
 }
 else if (taxableIncome<=500000) {
-    return '(taxableIncome-32333)*0.3';
+    return 'paye=24000*0.1+8333*0.25(taxableIncome-32333)*0.3';
 }
 else if (taxableIncome<=800000) {
-    return '(taxableIncome-500000)*0.325';
+    return 'paye=24000*0.1+8333*0.25+41667*0.03(taxableIncome-500000)*0.325';
 }
 else {
-    console.log('taxableIncome-800000)*0.35');
+    console.log('paye=24000*0.1+8333*0.25+41667*0.03+32333*0.325(taxableIncome-800000)*0.35');
 }
   console.log(taxableIncome);
 
@@ -82,7 +88,8 @@ let tier1=Math.min(grossPay, 7000)*0.06;
     
 
  // Net salary calculation
-let netPay=grossPay-paye-nhif-nssf
+let netPay=grossPay-(paye+nhif+nssf);
+return netPay;
 
 
 }

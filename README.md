@@ -15,10 +15,14 @@ Set up the coding environment through these steps:
 
 # Structure
 The structure of this directory is as follows:
-1. grade.js
-2. README.md
-3. salary.js
-4. speed.js
+1. node modules
+2. grade.js
+3. index.html
+4. package-lock.json
+5. package.json
+6. README.md
+7. salary.js
+8. speed.js
 
 
 # Procedure
